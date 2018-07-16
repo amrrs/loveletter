@@ -27,10 +27,13 @@ def salutation():
     return(rc(sals1) + " " + rc(sals2) + ", \n\n")
 
 def short_sentence():
-    return("%s My %s %s your %s" % (last, rc(nouns), rc(verbs), rc(nouns)))
+    return("%s You are my %s %s" % (last, rc(adjs), rc(nouns)))
 
 def long_sentence():
-    return("%s My %s %s %s %s your %s %s" % (last, rc(adjs), rc(nouns), rc(advs) ,rc(verbs), rc(adjs) ,rc(nouns)))
+    opt_adj1 = "" if randint(0,9) < 5 else rc(adjs)
+    opt_adj2 = "" if randint(0,9) < 5 else rc(adjs)
+    opt_adv1 = "" if randint(0,9) < 5 else rc(advs)
+    return("%s My %s %s %s %s your %s %s" % (last, opt_adj1, rc(nouns), opt_adv1 ,rc(verbs), opt_adj2 ,rc(nouns)))
 
 def sign():
     return(".\n\n     Yours %s,\n     M.U.C.\n"  % (rc(advs)))
